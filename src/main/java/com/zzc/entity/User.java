@@ -3,6 +3,7 @@ package com.zzc.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
@@ -11,6 +12,7 @@ import lombok.Data;
  * @Description:
  */
 @Data
+@ApiModel("用户")
 @TableName("user")
 public class User {
     @TableId

@@ -2,6 +2,10 @@ package com.zzc.controller;
 
 import com.zzc.entity.User;
 import com.zzc.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +17,7 @@ import java.util.List;
  * @date: 2023/07/05/21:49
  * @Description:
  */
+@Api("用户管理模块")
 @RestController
 @Slf4j
 @RequestMapping("/users")
@@ -24,6 +29,7 @@ public class UserController {
      * 查询所有用户
      */
     @GetMapping
+    @ApiOperation("查看所有用户")
     public List<User> list(){
         List<User> list = userService.list();
         //log.info("123");
@@ -36,6 +42,9 @@ public class UserController {
      * @return
      */
     @DeleteMapping("/{id}")
+    @ApiImplicitParams({
+            @ApiImplicitParam("用户id")
+    })
     public User del(@PathVariable Long id){
         User user = userService.getById(id);
         boolean b = userService.removeById(id);
