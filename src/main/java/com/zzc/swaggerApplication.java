@@ -12,6 +12,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 //@ServletComponentScan
 public class swaggerApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(swaggerApplication.class,args);
     }
